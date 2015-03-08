@@ -3,7 +3,7 @@ custom build for taking testcase from codeforces and checking if the program is 
 
 Platform: Gnu/Linux
 
-Language: Python
+Language: Python2.7.9
 
 Description: This program takes testcases from codeforces and tells if your program's output matches the output from testcases.
 
