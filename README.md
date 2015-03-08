@@ -1,7 +1,8 @@
 # sublime-plugin-for-codeforces
 custom build for taking testcase from codeforces and checking if the program is correct.
 
-Platform: Gnu/Linux, should work with osx with a little hack.
+Platform: Gnu/Linux
+
 Language: Python
 
 Description: This program takes testcases from codeforces and tells if your program's output matches the output from testcases.
