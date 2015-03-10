@@ -37,7 +37,6 @@ setup(
 
 	keywords='sublime plugin for codeforces',
 
-	#packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
-	packages=find_packages(new_code.py)
+	packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
 )

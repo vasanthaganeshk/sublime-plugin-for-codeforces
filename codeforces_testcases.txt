@@ -1,0 +1,14 @@
+Input
+tour
+Output
+.t.r
+Input
+Codeforces
+Output
+.c.d.f.r.c.s
+Input
+aBAcAba
+Output
+.b.c.b
+
+

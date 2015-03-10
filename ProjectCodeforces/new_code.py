@@ -1,58 +1,62 @@
 from sys import argv
 import subprocess
+from master import opener
 
 
-script, pyfile = argv
+#script, pyfile = argv
 
-py = open(pyfile)
-prob = py.readline()
-prob = list(prob)
-prob = ''.join(prob[1:len(prob) - 1])
+def localparser(pyfile):
 
-subprocess.call('python master.py {}'.format(prob), shell = True)
+	py = open(pyfile)
+	prob = py.readline()
+	prob = list(prob)
+	prob = ''.join(prob[1:len(prob) - 1])
 
-testcases = open('codeforces_testcases.txt', 'r+')
+	#subprocess.call('python master.py {}'.format(prob), shell = True)
+	opener(prob)
 
-list_testcase = testcases.read()
-list_testcase = list_testcase.split('\n')
-list_testcase = list_testcase[:list_testcase.index('')]
-list_testcase.append('Input')
-testcases.close()
+	testcases = open('codeforces_testcases.txt', 'r+')
 
-#print list_testcase
+	list_testcase = testcases.read()
+	list_testcase = list_testcase.split('\n')
+	list_testcase = list_testcase[:list_testcase.index('')]
+	list_testcase.append('Input')
+	testcases.close()
 
-flag = 0
+	#print list_testcase
 
-temp = []
-for i in xrange(list_testcase.count('Output')):
-	infile = open('text_in.txt', 'w')
-	outfile = open('text_out.txt', 'w')
+	flag = 0
 
-	temp  = list_testcase[list_testcase.index('Input')+1 : list_testcase.index('Output')]
-	infile.write('\n'.join(temp))
-	infile.write('\n')
-	list_testcase = list_testcase[list_testcase.index('Output'):]
-	
-	tempo = list_testcase[1: list_testcase.index('Input')]
-	outfile.write('\n'.join(tempo))
-	outfile.write('\n')
-	list_testcase = list_testcase[list_testcase.index('Input'):]
+	temp = []
+	for i in xrange(list_testcase.count('Output')):
+		infile = open('text_in.txt', 'w')
+		outfile = open('text_out.txt', 'w')
 
-	infile.close()
-	outfile.close()
-	
-	subprocess.call('python {} <text_in.txt >outfile.txt'.format(pyfile), shell = True)
+		temp  = list_testcase[list_testcase.index('Input')+1 : list_testcase.index('Output')]
+		infile.write('\n'.join(temp))
+		infile.write('\n')
+		list_testcase = list_testcase[list_testcase.index('Output'):]
+		
+		tempo = list_testcase[1: list_testcase.index('Input')]
+		outfile.write('\n'.join(tempo))
+		outfile.write('\n')
+		list_testcase = list_testcase[list_testcase.index('Input'):]
 
-	outputfile = open('outfile.txt')
-	outfile = open('text_out.txt')
+		infile.close()
+		outfile.close()
+		
+		subprocess.call('python {} <text_in.txt >outfile.txt'.format(pyfile), shell = True)
 
-	con1 = outfile.read()
-	con2 = outputfile.read()
+		outputfile = open('outfile.txt')
+		outfile = open('text_out.txt')
 
-	if con1 == con2:
-		print 'Testcase {} passed sucessfully!'.format(i+1)
-	else:
-		print 'Testcase {} failed!'.format(i+1)
+		con1 = outfile.read()
+		con2 = outputfile.read()
 
-	print 'Expected Output: \n{}'.format(con1)
-	print 'Your Output: \n{}'.format(con2)
+		if con1 == con2:
+			print 'Testcase {} passed sucessfully!'.format(i+1)
+		else:
+			print 'Testcase {} failed!'.format(i+1)
+
+		print 'Expected Output: \n{}'.format(con1)
+		print 'Your Output: \n{}'.format(con2)
