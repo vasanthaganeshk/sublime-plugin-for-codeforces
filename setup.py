@@ -8,7 +8,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 	long_description = f.read()
 
 setup(
-	name='projectcodeforces',
+	name='ProjectCodeforces',
 
 	version='0.1.0',
 
@@ -37,7 +37,7 @@ setup(
 
 	keywords='sublime plugin for codeforces',
 
-	#packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
-	packages=find_packages(new_code.py)
+	packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+	#packages=find_packages(ProjectCodeforces),
 
 )
