@@ -1,3 +1,3 @@
 {
-	"cmd": ["python", "new_code.py", "${file_name}"]
+	"cmd": ["python", "ProjectCodeforces", "${file_name}"]
 }
