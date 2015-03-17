@@ -1,3 +1,0 @@
-{
-	"cmd": ["python", "new_code.py", "${file_name}"]
-}
