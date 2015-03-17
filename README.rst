@@ -12,7 +12,7 @@ Hello my dear user,
 Are you using python on codeforces?
 Are you using sublime3 for writing code?
 
-Then this must be a gold mine for you. Just copy and paste the three files namely master.py, MyParser.py and new_code.py in your current working directory. Wait you are not done yet, take the "codeforces_python.sublime-build" and copy it to your ~/.config/sublime-text-3/Packages/User. Now open sublime text editor and go to tools>Build system>codeforces_python.
+Then this must be a gold mine for you. Just copy and paste 'ProjectCodeforces' directory into your current working directory. Wait you are not done yet, take the "codeforces_python.sublime-build" and copy it to your ~/.config/sublime-text-3/Packages/User. Now open sublime text editor and go to tools>Build system>codeforces_python.
 
 How to use it?
 
